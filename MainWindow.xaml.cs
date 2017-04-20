@@ -23,6 +23,7 @@ namespace NetCalculator
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
 
