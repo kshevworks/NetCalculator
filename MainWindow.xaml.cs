@@ -23,16 +23,16 @@ namespace NetCalculator
         public MainWindow()
         {
             InitializeComponent();
-            
-        }
 
+        }
+        bool checkInputFlag = true;
 
 
 
 
 
         //Переводим из десятичной в двоичную
-        string decToBin (string input)
+        string decToBin(string input)
         {
             string output = "";
             if ("" == input) return "";
@@ -46,10 +46,10 @@ namespace NetCalculator
             {
                 output = "0";
             }
-            if (output.Length<8)
+            if (output.Length < 8)
             {
                 int l = output.Length;
-                for(int i = 0; i < 8-l; i++)
+                for (int i = 0; i < 8 - l; i++)
                 {
                     output = "0" + output;
                 }
@@ -62,36 +62,46 @@ namespace NetCalculator
         {
             string output = "";
             int temp = 0;
-            for(int i = 0; i<input.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                temp += int.Parse(output[i].ToString()) * (2 ^ i);
+                temp += int.Parse(input[i].ToString()) * (2 ^ i);
             }
-            
+
             return temp.ToString();
         }
 
         string decimalCut(string input)
         {
-                try
-                {
-                    if (int.Parse(input) > 255)
-                        return "255";
-                }
-                catch
-                {
-                    return "";
-                }
+            try
+            {
+                if (int.Parse(input) > 255)
+                    return "255";
+            }
+            catch
+            {
+                return "";
+            }
             return input;
         }
 
         string binaryCut(string input)
         {
-            string output = "";
-            for (int i = 0; i < 8; i++)
+            string output = null;
+            for (int i = 0; i < input.Length; i++)
             {
-                output += input[i];
+                if (input[i] != '0' || input[i] != '1')
+                {
+                    output += "1";
+                }
             }
-            return output;
+            if (output.Length > 8)
+                return "11111111";
+            else
+            {
+                return output;
+            }
+
+
         }
 
 
@@ -115,12 +125,17 @@ namespace NetCalculator
 
         private void ipv4_dec_1oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ipv4_dec_1oct.Text = decimalCut(ipv4_dec_1oct.Text);
-            ipv4_dec_1oct.SelectionStart = ipv4_dec_1oct.Text.Length;
-
-            if (null != ipv4_bin_1oct)
+            if (checkInputFlag)
             {
-                ipv4_bin_1oct.Text = decToBin(ipv4_dec_1oct.Text);
+
+
+                ipv4_dec_1oct.Text = decimalCut(ipv4_dec_1oct.Text);
+                ipv4_dec_1oct.SelectionStart = ipv4_dec_1oct.Text.Length;
+
+                if (null != ipv4_bin_1oct)
+                {
+                    ipv4_bin_1oct.Text = decToBin(ipv4_dec_1oct.Text);
+                }
             }
         }
 
@@ -135,12 +150,15 @@ namespace NetCalculator
         }
         private void ipv4_dec_2oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ipv4_dec_2oct.Text = decimalCut(ipv4_dec_2oct.Text);
-            ipv4_dec_2oct.SelectionStart = ipv4_dec_2oct.Text.Length;
-
-            if (null != ipv4_bin_2oct)
+            if (checkInputFlag)
             {
-                ipv4_bin_2oct.Text = decToBin(ipv4_dec_2oct.Text);
+                ipv4_dec_2oct.Text = decimalCut(ipv4_dec_2oct.Text);
+                ipv4_dec_2oct.SelectionStart = ipv4_dec_2oct.Text.Length;
+
+                if (null != ipv4_bin_2oct)
+                {
+                    ipv4_bin_2oct.Text = decToBin(ipv4_dec_2oct.Text);
+                }
             }
         }
         private void ipv4_dec_3oct_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -154,12 +172,15 @@ namespace NetCalculator
         }
         private void ipv4_dec_3oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ipv4_dec_3oct.Text = decimalCut(ipv4_dec_3oct.Text);
-            ipv4_dec_3oct.SelectionStart = ipv4_dec_3oct.Text.Length;
-
-            if (null != ipv4_bin_3oct)
+            if (checkInputFlag)
             {
-                ipv4_bin_3oct.Text = decToBin(ipv4_dec_3oct.Text);
+                ipv4_dec_3oct.Text = decimalCut(ipv4_dec_3oct.Text);
+                ipv4_dec_3oct.SelectionStart = ipv4_dec_3oct.Text.Length;
+
+                if (null != ipv4_bin_3oct)
+                {
+                    ipv4_bin_3oct.Text = decToBin(ipv4_dec_3oct.Text);
+                }
             }
         }
         private void ipv4_dec_4oct_GotMouseCapture(object sender, MouseEventArgs e)
@@ -177,12 +198,15 @@ namespace NetCalculator
         }
         private void ipv4_dec_4oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ipv4_dec_4oct.Text = decimalCut(ipv4_dec_4oct.Text);
-            ipv4_dec_4oct.SelectionStart = ipv4_dec_4oct.Text.Length;
-
-            if (null != ipv4_bin_4oct)
+            if (checkInputFlag)
             {
-                ipv4_bin_4oct.Text = decToBin(ipv4_dec_4oct.Text);
+                ipv4_dec_4oct.Text = decimalCut(ipv4_dec_4oct.Text);
+                ipv4_dec_4oct.SelectionStart = ipv4_dec_4oct.Text.Length;
+
+                if (null != ipv4_bin_4oct)
+                {
+                    ipv4_bin_4oct.Text = decToBin(ipv4_dec_4oct.Text);
+                }
             }
         }
 
@@ -199,12 +223,15 @@ namespace NetCalculator
 
         private void mask_dec_1oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            mask_dec_1oct.Text = decimalCut(mask_dec_1oct.Text);
-            mask_dec_1oct.SelectionStart = mask_dec_1oct.Text.Length;
-
-            if (null != mask_bin_1oct)
+            if (checkInputFlag)
             {
-                mask_bin_1oct.Text = decToBin(mask_dec_1oct.Text);
+                mask_dec_1oct.Text = decimalCut(mask_dec_1oct.Text);
+                mask_dec_1oct.SelectionStart = mask_dec_1oct.Text.Length;
+
+                if (null != mask_bin_1oct)
+                {
+                    mask_bin_1oct.Text = decToBin(mask_dec_1oct.Text);
+                }
             }
         }
 
@@ -219,12 +246,15 @@ namespace NetCalculator
         }
         private void mask_dec_2oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            mask_dec_2oct.Text = decimalCut(mask_dec_2oct.Text);
-            mask_dec_2oct.SelectionStart = mask_dec_2oct.Text.Length;
-
-            if (null != mask_bin_2oct)
+            if (checkInputFlag)
             {
-                mask_bin_2oct.Text = decToBin(mask_dec_2oct.Text);
+                mask_dec_2oct.Text = decimalCut(mask_dec_2oct.Text);
+                mask_dec_2oct.SelectionStart = mask_dec_2oct.Text.Length;
+
+                if (null != mask_bin_2oct)
+                {
+                    mask_bin_2oct.Text = decToBin(mask_dec_2oct.Text);
+                }
             }
         }
         private void mask_dec_3oct_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -238,12 +268,15 @@ namespace NetCalculator
         }
         private void mask_dec_3oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            mask_dec_3oct.Text = decimalCut(mask_dec_3oct.Text);
-            mask_dec_3oct.SelectionStart = mask_dec_3oct.Text.Length;
-
-            if (null != mask_bin_3oct)
+            if (checkInputFlag)
             {
-                mask_bin_3oct.Text = decToBin(mask_dec_3oct.Text);
+                mask_dec_3oct.Text = decimalCut(mask_dec_3oct.Text);
+                mask_dec_3oct.SelectionStart = mask_dec_3oct.Text.Length;
+
+                if (null != mask_bin_3oct)
+                {
+                    mask_bin_3oct.Text = decToBin(mask_dec_3oct.Text);
+                }
             }
         }
         private void mask_dec_4oct_GotMouseCapture(object sender, MouseEventArgs e)
@@ -261,16 +294,75 @@ namespace NetCalculator
         }
         private void mask_dec_4oct_TextChanged(object sender, TextChangedEventArgs e)
         {
-            mask_dec_4oct.Text = decimalCut(mask_dec_4oct.Text);
-            mask_dec_4oct.SelectionStart = mask_dec_4oct.Text.Length;
-
-            if (null != mask_bin_4oct)
+            if (checkInputFlag)
             {
-                mask_bin_4oct.Text = decToBin(mask_dec_4oct.Text);
+                mask_dec_4oct.Text = decimalCut(mask_dec_4oct.Text);
+                mask_dec_4oct.SelectionStart = mask_dec_4oct.Text.Length;
+
+                if (null != mask_bin_4oct)
+                {
+                    mask_bin_4oct.Text = decToBin(mask_dec_4oct.Text);
+                }
             }
         }
+        //Редактирование ip адреса в двоичном виде
 
+        private void ipv4_bin_1oct_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (null != ipv4_dec_1oct)
+            {
+                ipv4_dec_1oct.Text = binToDec(binaryCut(ipv4_bin_1oct.Text));
+            }
 
+        }
 
+        private void BinChecker_Checked(object sender, RoutedEventArgs e)
+        {
+            ipv4_dec_1oct.IsEnabled = true;
+            ipv4_dec_2oct.IsEnabled = true;
+            ipv4_dec_3oct.IsEnabled = true;
+            ipv4_dec_4oct.IsEnabled = true;
+            mask_dec_1oct.IsEnabled = true;
+            mask_dec_2oct.IsEnabled = true;
+            mask_dec_3oct.IsEnabled = true;
+            mask_dec_4oct.IsEnabled = true;
+
+            ipv4_bin_1oct.IsEnabled = false;
+            ipv4_bin_2oct.IsEnabled = false;
+            ipv4_bin_3oct.IsEnabled = false;
+            ipv4_bin_4oct.IsEnabled = false;
+            mask_bin_1oct.IsEnabled = false;
+            mask_bin_2oct.IsEnabled = false;
+            mask_bin_3oct.IsEnabled = false;
+            mask_bin_4oct.IsEnabled = false;
+            checkInputFlag = !BinChecker.IsChecked.Value;
+        }
+
+        private void DecCheker_Checked(object sender, RoutedEventArgs e)
+        {
+            ipv4_bin_1oct.IsEnabled = true;
+            ipv4_bin_2oct.IsEnabled = true;
+            ipv4_bin_3oct.IsEnabled = true;
+            ipv4_bin_4oct.IsEnabled = true;
+            mask_bin_1oct.IsEnabled = true;
+            mask_bin_2oct.IsEnabled = true;
+            mask_bin_3oct.IsEnabled = true;
+            mask_bin_4oct.IsEnabled = true;
+
+            ipv4_dec_1oct.IsEnabled = false;
+            ipv4_dec_2oct.IsEnabled = false;
+            ipv4_dec_3oct.IsEnabled = false;
+            ipv4_dec_4oct.IsEnabled = false;
+            mask_dec_1oct.IsEnabled = false;
+            mask_dec_2oct.IsEnabled = false;
+            mask_dec_3oct.IsEnabled = false;
+            mask_dec_4oct.IsEnabled = false;
+            checkInputFlag = !BinChecker.IsChecked.Value;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
