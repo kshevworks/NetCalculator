@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetCalculator"
         mc:Ignorable="d"
-        Title="Супер пупер мега калькулятор 2017" Height="389" Width="589.372" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Супер пупер мега калькулятор 2017" Height="389" Width="627.372" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,23,0">
         <Label Content="Net mask:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
         <Label Content="IPv4 адрес:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
         <Label Content="Decimal" HorizontalAlignment="Left" Margin="164,3,0,0" VerticalAlignment="Top"/>
@@ -18,27 +18,27 @@
         <TextBox x:Name="mask_dec_2oct" HorizontalAlignment="Left" Height="19" Margin="151,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="3" TextAlignment="Center" GotKeyboardFocus="mask_dec_2oct_GotKeyboardFocus" GotMouseCapture="mask_dec_2oct_GotMouseCapture" TextChanged="mask_dec_2oct_TextChanged"/>
         <TextBox x:Name="mask_dec_3oct" HorizontalAlignment="Left" Height="19" Margin="193,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="3" TextAlignment="Center" GotKeyboardFocus="mask_dec_3oct_GotKeyboardFocus" GotMouseCapture="mask_dec_3oct_GotMouseCapture" TextChanged="mask_dec_3oct_TextChanged"/>
         <TextBox x:Name="mask_dec_4oct" HorizontalAlignment="Left" Height="19" Margin="235,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="3" TextAlignment="Center" GotKeyboardFocus="mask_dec_4oct_GotKeyboardFocus" GotMouseCapture="mask_dec_4oct_GotMouseCapture" TextChanged="mask_dec_4oct_TextChanged"/>
-        <TextBox x:Name="ipv4_bin_1oct" HorizontalAlignment="Left" Height="19" Margin="312,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <TextBox x:Name="ipv4_bin_2oct" HorizontalAlignment="Left" Height="19" Margin="378,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <TextBox x:Name="ipv4_bin_3oct" HorizontalAlignment="Left" Height="19" Margin="444,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <TextBox x:Name="ipv4_bin_4oct" HorizontalAlignment="Left" Height="19" Margin="510,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <TextBox x:Name="mask_bin_1oct" HorizontalAlignment="Left" Height="19" Margin="312,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <TextBox x:Name="mask_bin_2oct" HorizontalAlignment="Left" Height="19" Margin="378,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <TextBox x:Name="mask_bin_3oct" HorizontalAlignment="Left" Height="19" Margin="444,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <TextBox x:Name="mask_bin_4oct" HorizontalAlignment="Left" Height="19" Margin="510,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center"/>
-        <Label Content="Binary" HorizontalAlignment="Left" Margin="419,3,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ipv4_bin_1oct" HorizontalAlignment="Left" Height="19" Margin="326,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="ipv4_bin_2oct" HorizontalAlignment="Left" Height="19" Margin="392,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="ipv4_bin_3oct" HorizontalAlignment="Left" Height="19" Margin="458,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="ipv4_bin_4oct" HorizontalAlignment="Left" Height="19" Margin="524,32,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="mask_bin_1oct" HorizontalAlignment="Left" Height="19" Margin="326,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="mask_bin_2oct" HorizontalAlignment="Left" Height="19" Margin="392,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="mask_bin_3oct" HorizontalAlignment="Left" Height="19" Margin="458,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="mask_bin_4oct" HorizontalAlignment="Left" Height="19" Margin="524,57,0,0" TextWrapping="Wrap" Text="00000000" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.886,-1.205" UndoLimit="8" TextAlignment="Center" IsReadOnly="True"/>
+        <Label Content="Binary" HorizontalAlignment="Left" Margin="433,3,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="142,32,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,32,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,32,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="142,57,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,57,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,57,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="501,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,56,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,56,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="501,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="515,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="515,56,0,0" VerticalAlignment="Top"/>
         <Label Content="Net address:" HorizontalAlignment="Left" Margin="11,99,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="108,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="150,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
@@ -47,13 +47,13 @@
         <Label Content="." HorizontalAlignment="Left" Margin="142,100,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,100,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="311,99,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="377,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="444,99,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="509,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,101,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="502,101,0,0" VerticalAlignment="Top"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,99,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,99,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,101,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="516,101,0,0" VerticalAlignment="Top"/>
         <Label Content="Broadcast:" HorizontalAlignment="Left" Margin="11,126,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="108,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="150,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
@@ -62,13 +62,13 @@
         <Label Content="." HorizontalAlignment="Left" Margin="142,127,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,127,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,127,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="311,126,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="377,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="444,126,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="509,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,128,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,127,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="502,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,126,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,126,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,127,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="516,128,0,0" VerticalAlignment="Top"/>
         <Label Content="Min host IPv4:" HorizontalAlignment="Left" Margin="11,153,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="108,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="150,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
@@ -77,13 +77,13 @@
         <Label Content="." HorizontalAlignment="Left" Margin="142,154,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,154,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,154,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="311,153,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="377,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="444,153,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="509,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,155,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,154,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="502,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,153,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,153,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,154,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="516,155,0,0" VerticalAlignment="Top"/>
         <Label Content="Max host IPv4:" HorizontalAlignment="Left" Margin="11,180,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="108,180,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="150,180,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
@@ -92,15 +92,15 @@
         <Label Content="." HorizontalAlignment="Left" Margin="142,181,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,181,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,181,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="311,180,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="377,181,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="444,180,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="509,181,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,182,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,181,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="502,182,0,0" VerticalAlignment="Top"/>
-        <Label Content="Count of subnets in network:" HorizontalAlignment="Left" Margin="193,286,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="393,286,0,0" VerticalAlignment="Top" Width="79" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,180,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,181,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,180,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,181,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,182,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,181,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="516,182,0,0" VerticalAlignment="Top"/>
+        <Label Content="Count of subnets in network:" HorizontalAlignment="Left" Margin="207,286,0,0" VerticalAlignment="Top"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="407,286,0,0" VerticalAlignment="Top" Width="79" HorizontalContentAlignment="Center"/>
         <Label Content="Hosts in subnet:" HorizontalAlignment="Left" Margin="11,317,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="99,317,0,0" VerticalAlignment="Top" Width="79" HorizontalContentAlignment="Center"/>
         <Label Content="Min subnet host:" HorizontalAlignment="Left" Margin="11,208,0,0" VerticalAlignment="Top"/>
@@ -111,13 +111,13 @@
         <Label Content="." HorizontalAlignment="Left" Margin="142,209,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,209,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,209,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="311,208,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="377,209,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="444,208,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="509,209,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,210,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,209,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="502,210,0,0" VerticalAlignment="Top"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,208,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,209,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,208,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,209,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,210,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,209,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="516,210,0,0" VerticalAlignment="Top"/>
         <Label Content="Max subnet host:" HorizontalAlignment="Left" Margin="11,234,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="108,234,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="150,234,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
@@ -126,19 +126,21 @@
         <Label Content="." HorizontalAlignment="Left" Margin="142,235,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,235,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,235,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="311,234,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="377,235,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="444,234,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="509,235,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="369,236,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="435,235,0,0" VerticalAlignment="Top"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="502,236,0,0" VerticalAlignment="Top"/>
-        <Label Content="Subnet IPv4 pool:" HorizontalAlignment="Left" Margin="193,317,0,0" VerticalAlignment="Top"/>
-        <Label Content="0.0.0.0" HorizontalAlignment="Left" Margin="303,317,0,0" VerticalAlignment="Top" Width="127" HorizontalContentAlignment="Right"/>
-        <Label Content="0.0.0.0" HorizontalAlignment="Left" Margin="435,317,0,0" VerticalAlignment="Top" Width="127"/>
-        <Label Content="-" HorizontalAlignment="Left" Margin="425,317,0,0" VerticalAlignment="Top"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,234,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,235,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,234,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,235,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="383,236,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="449,235,0,0" VerticalAlignment="Top"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="516,236,0,0" VerticalAlignment="Top"/>
+        <Label Content="Subnet IPv4 pool:" HorizontalAlignment="Left" Margin="207,317,0,0" VerticalAlignment="Top"/>
+        <Label Content="0.0.0.0" HorizontalAlignment="Left" Margin="317,317,0,0" VerticalAlignment="Top" Width="127" HorizontalContentAlignment="Right"/>
+        <Label Content="0.0.0.0" HorizontalAlignment="Left" Margin="449,317,0,0" VerticalAlignment="Top" Width="127"/>
+        <Label Content="-" HorizontalAlignment="Left" Margin="439,317,0,0" VerticalAlignment="Top"/>
         <Label Content="Hosts in network:" HorizontalAlignment="Left" Margin="11,286,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="99,286,0,0" VerticalAlignment="Top" Width="79" HorizontalContentAlignment="Center"/>
+        <Label Content="/" HorizontalAlignment="Left" Margin="272,29,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="287,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="23" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>
