@@ -14,6 +14,7 @@
         <TextBox x:Name="ipv4_dec_2oct" HorizontalAlignment="Left" Height="19" Margin="151,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="0" TextAlignment="Center" TextChanged="ipv4_dec_2oct_TextChanged" GotKeyboardFocus="ipv4_dec_2oct_GotKeyboardFocus" GotMouseCapture="ipv4_dec_2oct_GotMouseCapture"/>
         <TextBox x:Name="ipv4_dec_3oct" HorizontalAlignment="Left" Height="19" Margin="193,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="0" TextAlignment="Center" TextChanged="ipv4_dec_3oct_TextChanged" GotKeyboardFocus="ipv4_dec_3oct_GotKeyboardFocus" GotMouseCapture="ipv4_dec_3oct_GotMouseCapture"/>
         <TextBox x:Name="ipv4_dec_4oct" HorizontalAlignment="Left" Height="19" Margin="235,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="3" TextAlignment="Center" TextChanged="ipv4_dec_4oct_TextChanged" GotMouseCapture="ipv4_dec_4oct_GotMouseCapture" GotKeyboardFocus="ipv4_dec_4oct_GotKeyboardFocus" GotFocus="ipv4_dec_4oct_GotFocus"/>
+        <TextBox x:Name="mask_dec_slash" HorizontalAlignment="Left" Height="19" Margin="287,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="23" HorizontalContentAlignment="Center" TextChanged="mask_dec_slash_TextChanged" GotFocus="mask_dec_slash_GotFocus" GotKeyboardFocus="mask_dec_slash_GotKeyboardFocus" GotMouseCapture="mask_dec_slash_GotMouseCapture"/>
         <TextBox x:Name="mask_dec_1oct" HorizontalAlignment="Left" Height="19" Margin="109,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="3" TextAlignment="Center" GotKeyboardFocus="mask_dec_1oct_GotKeyboardFocus" GotMouseCapture="mask_dec_1oct_GotMouseCapture" TextChanged="mask_dec_1oct_TextChanged"/>
         <TextBox x:Name="mask_dec_2oct" HorizontalAlignment="Left" Height="19" Margin="151,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="3" TextAlignment="Center" GotKeyboardFocus="mask_dec_2oct_GotKeyboardFocus" GotMouseCapture="mask_dec_2oct_GotMouseCapture" TextChanged="mask_dec_2oct_TextChanged"/>
         <TextBox x:Name="mask_dec_3oct" HorizontalAlignment="Left" Height="19" Margin="193,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="3" TextAlignment="Center" GotKeyboardFocus="mask_dec_3oct_GotKeyboardFocus" GotMouseCapture="mask_dec_3oct_GotMouseCapture" TextChanged="mask_dec_3oct_TextChanged"/>
@@ -140,7 +141,7 @@
         <Label Content="Hosts in network:" HorizontalAlignment="Left" Margin="11,286,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="99,286,0,0" VerticalAlignment="Top" Width="79" HorizontalContentAlignment="Center"/>
         <Label Content="/" HorizontalAlignment="Left" Margin="272,29,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="19" Margin="287,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="23" HorizontalContentAlignment="Center"/>
+        
 
     </Grid>
 </Window>

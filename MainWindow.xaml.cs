@@ -19,14 +19,50 @@ namespace NetCalculator
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    { 
+        
         public MainWindow()
         {
             InitializeComponent();
             
         }
 
-
+        string[,] maskTypes =
+        {
+            {"0", "0","0","0" },
+            {"128", "0","0","0" },
+            {"192", "0","0","0" },
+            {"224", "0","0","0" },
+            {"240", "0","0","0" },
+            {"248", "0","0","0" },
+            {"252", "0","0","0" },
+            {"254", "0","0","0" },
+            {"255", "0","0","0" },
+            {"255", "128","0","0" },
+            {"255", "192","0","0" },
+            {"255", "224","0","0" },
+            {"255", "240","0","0" },
+            {"255", "248","0","0" },
+            {"255", "252","0","0" },
+            {"255", "254","0","0" },
+            {"255", "255","0","0" },
+            {"255", "255","128","0" },
+            {"255", "255","192","0" },
+            {"255", "255","224","0" },
+            {"255", "255","240","0" },
+            {"255", "255","248","0" },
+            {"255", "255","252","0" },
+            {"255", "255","254","0" },
+            {"255", "255","255","0" },
+            {"255", "255","255","128" },
+            {"255", "255","255","192" },
+            {"255", "255","255","224" },
+            {"255", "255","255","240" },
+            {"255", "255","255","248" },
+            {"255", "255","255","252" },
+            {"255", "255","255","254" },
+            {"255", "255","255","255" }
+        };
 
 
 
@@ -81,6 +117,22 @@ namespace NetCalculator
                 {
                     return "";
                 }
+            return input;
+        }
+
+        string maskDecimalCut(string input)
+        {
+            try
+            {
+                if (int.Parse(input) > 32)
+                    return "32";
+                else if (int.Parse(input) == 0)
+                    return "0";
+            }
+            catch
+            {
+                return "";
+            }
             return input;
         }
 
@@ -270,7 +322,230 @@ namespace NetCalculator
             }
         }
 
+        private void mask_dec_slash_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+            mask_dec_slash.Text = maskDecimalCut(mask_dec_slash.Text);
+            mask_dec_slash.SelectionStart = mask_dec_slash.Text.Length;
+            if (null != mask_dec_1oct & null != mask_dec_2oct & null != mask_dec_3oct & null != mask_dec_4oct)
+            {
+                switch (mask_dec_slash.Text)
+                {
+                    case "0":
+                        mask_dec_1oct.Text = maskTypes[0, 0];
+                        mask_dec_2oct.Text = maskTypes[0, 1];
+                        mask_dec_3oct.Text = maskTypes[0, 2];
+                        mask_dec_4oct.Text = maskTypes[0, 3];
+                        break;
+                    case "1":
+                        mask_dec_1oct.Text = maskTypes[1, 0];
+                        mask_dec_2oct.Text = maskTypes[1, 1];
+                        mask_dec_3oct.Text = maskTypes[1, 2];
+                        mask_dec_4oct.Text = maskTypes[1, 3];
+                        break;
+                    case "2":
+                        mask_dec_1oct.Text = maskTypes[2, 0];
+                        mask_dec_2oct.Text = maskTypes[2, 1];
+                        mask_dec_3oct.Text = maskTypes[2, 2];
+                        mask_dec_4oct.Text = maskTypes[2, 3];
+                        break;
+                    case "3":
+                        mask_dec_1oct.Text = maskTypes[3, 0];
+                        mask_dec_2oct.Text = maskTypes[3, 1];
+                        mask_dec_3oct.Text = maskTypes[3, 2];
+                        mask_dec_4oct.Text = maskTypes[3, 3];
+                        break;
+                    case "4":
+                        mask_dec_1oct.Text = maskTypes[4, 0];
+                        mask_dec_2oct.Text = maskTypes[4, 1];
+                        mask_dec_3oct.Text = maskTypes[4, 2];
+                        mask_dec_4oct.Text = maskTypes[4, 3];
+                        break;
+                    case "5":
+                        mask_dec_1oct.Text = maskTypes[5, 0];
+                        mask_dec_2oct.Text = maskTypes[5, 1];
+                        mask_dec_3oct.Text = maskTypes[5, 2];
+                        mask_dec_4oct.Text = maskTypes[5, 3];
+                        break;
+                    case "6":
+                        mask_dec_1oct.Text = maskTypes[6, 0];
+                        mask_dec_2oct.Text = maskTypes[6, 1];
+                        mask_dec_3oct.Text = maskTypes[6, 2];
+                        mask_dec_4oct.Text = maskTypes[6, 3];
+                        break;
+                    case "7":
+                        mask_dec_1oct.Text = maskTypes[7, 0];
+                        mask_dec_2oct.Text = maskTypes[7, 1];
+                        mask_dec_3oct.Text = maskTypes[7, 2];
+                        mask_dec_4oct.Text = maskTypes[7, 3];
+                        break;
+                    case "8":
+                        mask_dec_1oct.Text = maskTypes[8, 0];
+                        mask_dec_2oct.Text = maskTypes[8, 1];
+                        mask_dec_3oct.Text = maskTypes[8, 2];
+                        mask_dec_4oct.Text = maskTypes[8, 3];
+                        break;
+                    case "9":
+                        mask_dec_1oct.Text = maskTypes[9, 0];
+                        mask_dec_2oct.Text = maskTypes[9, 1];
+                        mask_dec_3oct.Text = maskTypes[9, 2];
+                        mask_dec_4oct.Text = maskTypes[9, 3];
+                        break;
+                    case "10":
+                        mask_dec_1oct.Text = maskTypes[10, 0];
+                        mask_dec_2oct.Text = maskTypes[10, 1];
+                        mask_dec_3oct.Text = maskTypes[10, 2];
+                        mask_dec_4oct.Text = maskTypes[10, 3];
+                        break;
+                    case "11":
+                        mask_dec_1oct.Text = maskTypes[11, 0];
+                        mask_dec_2oct.Text = maskTypes[11, 1];
+                        mask_dec_3oct.Text = maskTypes[11, 2];
+                        mask_dec_4oct.Text = maskTypes[11, 3];
+                        break;
+                    case "12":
+                        mask_dec_1oct.Text = maskTypes[12, 0];
+                        mask_dec_2oct.Text = maskTypes[12, 1];
+                        mask_dec_3oct.Text = maskTypes[12, 2];
+                        mask_dec_4oct.Text = maskTypes[12, 3];
+                        break;
+                    case "13":
+                        mask_dec_1oct.Text = maskTypes[13, 0];
+                        mask_dec_2oct.Text = maskTypes[13, 1];
+                        mask_dec_3oct.Text = maskTypes[13, 2];
+                        mask_dec_4oct.Text = maskTypes[13, 3];
+                        break;
+                    case "14":
+                        mask_dec_1oct.Text = maskTypes[14, 0];
+                        mask_dec_2oct.Text = maskTypes[14, 1];
+                        mask_dec_3oct.Text = maskTypes[14, 2];
+                        mask_dec_4oct.Text = maskTypes[14, 3];
+                        break;
+                    case "15":
+                        mask_dec_1oct.Text = maskTypes[15, 0];
+                        mask_dec_2oct.Text = maskTypes[15, 1];
+                        mask_dec_3oct.Text = maskTypes[15, 2];
+                        mask_dec_4oct.Text = maskTypes[15, 3];
+                        break;
+                    case "16":
+                        mask_dec_1oct.Text = maskTypes[16, 0];
+                        mask_dec_2oct.Text = maskTypes[16, 1];
+                        mask_dec_3oct.Text = maskTypes[16, 2];
+                        mask_dec_4oct.Text = maskTypes[16, 3];
+                        break;
+                    case "17":
+                        mask_dec_1oct.Text = maskTypes[17, 0];
+                        mask_dec_2oct.Text = maskTypes[17, 1];
+                        mask_dec_3oct.Text = maskTypes[17, 2];
+                        mask_dec_4oct.Text = maskTypes[17, 3];
+                        break;
+                    case "18":
+                        mask_dec_1oct.Text = maskTypes[18, 0];
+                        mask_dec_2oct.Text = maskTypes[18, 1];
+                        mask_dec_3oct.Text = maskTypes[18, 2];
+                        mask_dec_4oct.Text = maskTypes[18, 3];
+                        break;
+                    case "19":
+                        mask_dec_1oct.Text = maskTypes[19, 0];
+                        mask_dec_2oct.Text = maskTypes[19, 1];
+                        mask_dec_3oct.Text = maskTypes[19, 2];
+                        mask_dec_4oct.Text = maskTypes[19, 3];
+                        break;
+                    case "20":
+                        mask_dec_1oct.Text = maskTypes[20, 0];
+                        mask_dec_2oct.Text = maskTypes[20, 1];
+                        mask_dec_3oct.Text = maskTypes[20, 2];
+                        mask_dec_4oct.Text = maskTypes[20, 3];
+                        break;
+                    case "21":
+                        mask_dec_1oct.Text = maskTypes[21, 0];
+                        mask_dec_2oct.Text = maskTypes[21, 1];
+                        mask_dec_3oct.Text = maskTypes[21, 2];
+                        mask_dec_4oct.Text = maskTypes[21, 3];
+                        break;
+                    case "22":
+                        mask_dec_1oct.Text = maskTypes[22, 0];
+                        mask_dec_2oct.Text = maskTypes[22, 1];
+                        mask_dec_3oct.Text = maskTypes[22, 2];
+                        mask_dec_4oct.Text = maskTypes[22, 3];
+                        break;
+                    case "23":
+                        mask_dec_1oct.Text = maskTypes[23, 0];
+                        mask_dec_2oct.Text = maskTypes[23, 1];
+                        mask_dec_3oct.Text = maskTypes[23, 2];
+                        mask_dec_4oct.Text = maskTypes[23, 3];
+                        break;
+                    case "24":
+                        mask_dec_1oct.Text = maskTypes[24, 0];
+                        mask_dec_2oct.Text = maskTypes[24, 1];
+                        mask_dec_3oct.Text = maskTypes[24, 2];
+                        mask_dec_4oct.Text = maskTypes[24, 3];
+                        break;
+                    case "25":
+                        mask_dec_1oct.Text = maskTypes[25, 0];
+                        mask_dec_2oct.Text = maskTypes[25, 1];
+                        mask_dec_3oct.Text = maskTypes[25, 2];
+                        mask_dec_4oct.Text = maskTypes[25, 3];
+                        break;
+                    case "26":
+                        mask_dec_1oct.Text = maskTypes[26, 0];
+                        mask_dec_2oct.Text = maskTypes[26, 1];
+                        mask_dec_3oct.Text = maskTypes[26, 2];
+                        mask_dec_4oct.Text = maskTypes[26, 3];
+                        break;
+                    case "27":
+                        mask_dec_1oct.Text = maskTypes[27, 0];
+                        mask_dec_2oct.Text = maskTypes[27, 1];
+                        mask_dec_3oct.Text = maskTypes[27, 2];
+                        mask_dec_4oct.Text = maskTypes[27, 3];
+                        break;
+                    case "28":
+                        mask_dec_1oct.Text = maskTypes[28, 0];
+                        mask_dec_2oct.Text = maskTypes[28, 1];
+                        mask_dec_3oct.Text = maskTypes[28, 2];
+                        mask_dec_4oct.Text = maskTypes[28, 3];
+                        break;
+                    case "29":
+                        mask_dec_1oct.Text = maskTypes[29, 0];
+                        mask_dec_2oct.Text = maskTypes[29, 1];
+                        mask_dec_3oct.Text = maskTypes[29, 2];
+                        mask_dec_4oct.Text = maskTypes[29, 3];
+                        break;
+                    case "30":
+                        mask_dec_1oct.Text = maskTypes[30, 0];
+                        mask_dec_2oct.Text = maskTypes[30, 1];
+                        mask_dec_3oct.Text = maskTypes[30, 2];
+                        mask_dec_4oct.Text = maskTypes[30, 3];
+                        break;
+                    case "31":
+                        mask_dec_1oct.Text = maskTypes[31, 0];
+                        mask_dec_2oct.Text = maskTypes[31, 1];
+                        mask_dec_3oct.Text = maskTypes[31, 2];
+                        mask_dec_4oct.Text = maskTypes[31, 3];
+                        break;
+                    case "32":
+                        mask_dec_1oct.Text = maskTypes[32, 0];
+                        mask_dec_2oct.Text = maskTypes[32, 1];
+                        mask_dec_3oct.Text = maskTypes[32, 2];
+                        mask_dec_4oct.Text = maskTypes[32, 3];
+                        break;
+                }
+            }
+        }
 
+        private void mask_dec_slash_GotFocus(object sender, RoutedEventArgs e)
+        {
+            setSelection(mask_dec_slash);
+        }
+
+        private void mask_dec_slash_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            setSelection(mask_dec_slash);
+        }
+
+        private void mask_dec_slash_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            setSelection(mask_dec_slash);
+        }
     }
 }
