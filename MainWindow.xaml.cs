@@ -152,6 +152,35 @@ namespace NetCalculator
             tb.Select(0, tb.Text.Length);
         }
 
+        void setMask(TextBox tb)
+        {
+            switch (tb.Text)
+            {
+                case "0":
+                    break;
+                case "128":
+                    break;
+                case "192":
+                    break;
+                case "224":
+                    break;
+                case "240":
+                    break;
+                case "248":
+                    break;
+                case "252":
+                    break;
+                case "254":
+                    break;
+                case "255":
+                    break;
+                default:
+                    tb.Text = "0";
+                    break;
+
+            }
+        }
+
 
 
         //Секция десятичного вида IP адреса
@@ -546,6 +575,26 @@ namespace NetCalculator
         private void mask_dec_slash_GotMouseCapture(object sender, MouseEventArgs e)
         {
             setSelection(mask_dec_slash);
+        }
+
+        private void mask_dec_1oct_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setMask(mask_dec_1oct);
+        }
+
+        private void mask_dec_2oct_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setMask(mask_dec_2oct);
+        }
+
+        private void mask_dec_3oct_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setMask(mask_dec_3oct);
+        }
+
+        private void mask_dec_4oct_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setMask(mask_dec_4oct);
         }
     }
 }
