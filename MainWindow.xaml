@@ -41,17 +41,17 @@
         <Label Content="." HorizontalAlignment="Left" Margin="449,56,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="515,56,0,0" VerticalAlignment="Top"/>
         <Label Content="Net address:" HorizontalAlignment="Left" Margin="11,99,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="108,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="150,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="192,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="234,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label x:Name="netaddress_dec_oct1" Content="0" HorizontalAlignment="Left" Margin="108,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="netaddress_dec_oct2" Content="0" HorizontalAlignment="Left" Margin="150,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="netaddress_dec_oct3" Content="0" HorizontalAlignment="Left" Margin="192,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="netaddress_dec_oct4" Content="0" HorizontalAlignment="Left" Margin="234,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
         <Label Content="." HorizontalAlignment="Left" Margin="142,100,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,100,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,99,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,99,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label x:Name="netaddress_bin_oct1" Content="00000000" HorizontalAlignment="Left" Margin="325,99,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label x:Name="netaddress_bin_oct2" Content="00000000" HorizontalAlignment="Left" Margin="391,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label x:Name="netaddress_bin_oct3" Content="00000000" HorizontalAlignment="Left" Margin="458,99,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label x:Name="netaddress_bin_oct4" Content="00000000" HorizontalAlignment="Left" Margin="523,100,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
         <Label Content="." HorizontalAlignment="Left" Margin="383,101,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="449,100,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="516,101,0,0" VerticalAlignment="Top"/>
