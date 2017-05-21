@@ -8,7 +8,7 @@
         Title="Супер пупер мега калькулятор 2017" Height="389" Width="627.372" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,23,0">
         <Label Content="Net mask:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
-        <Label Content="IPv4 адрес:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
+        <Label Content="IPv4 address:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
         <Label Content="Decimal" HorizontalAlignment="Left" Margin="164,3,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="ipv4_dec_1oct" HorizontalAlignment="Left" Height="18" Margin="109,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="0" TextAlignment="Center" TextChanged="ipv4_dec_1oct_TextChanged" GotKeyboardFocus="ipv4_dec_1oct_GotKeyboardFocus" GotMouseCapture="ipv4_dec_1oct_GotMouseCapture"/>
         <TextBox x:Name="ipv4_dec_2oct" HorizontalAlignment="Left" Height="19" Margin="151,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.886,-1.205" UndoLimit="0" TextAlignment="Center" TextChanged="ipv4_dec_2oct_TextChanged" GotKeyboardFocus="ipv4_dec_2oct_GotKeyboardFocus" GotMouseCapture="ipv4_dec_2oct_GotMouseCapture"/>
@@ -40,7 +40,7 @@
         <Label Content="." HorizontalAlignment="Left" Margin="383,56,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="449,56,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="515,56,0,0" VerticalAlignment="Top"/>
-        <Label Content="Net address:" HorizontalAlignment="Left" Margin="11,99,0,0" VerticalAlignment="Top"/>
+        <Label Content="Network address:" HorizontalAlignment="Left" Margin="11,99,0,0" VerticalAlignment="Top"/>
         <Label x:Name="netaddress_dec_oct1" Content="0" HorizontalAlignment="Left" Margin="108,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
         <Label x:Name="netaddress_dec_oct2" Content="0" HorizontalAlignment="Left" Margin="150,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
         <Label x:Name="netaddress_dec_oct3" Content="0" HorizontalAlignment="Left" Margin="192,99,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
@@ -55,33 +55,33 @@
         <Label Content="." HorizontalAlignment="Left" Margin="383,101,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="449,100,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="516,101,0,0" VerticalAlignment="Top"/>
-        <Label Content="Broadcast:" HorizontalAlignment="Left" Margin="11,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="108,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="150,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="192,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="234,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="Host number:" HorizontalAlignment="Left" Margin="11,126,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="hostnumber_dec_oct1" Content="0" HorizontalAlignment="Left" Margin="108,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="hostnumber_dec_oct2" Content="0" HorizontalAlignment="Left" Margin="150,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="hostnumber_dec_oct3" Content="0" HorizontalAlignment="Left" Margin="192,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="hostnumber_dec_oct4" Content="0" HorizontalAlignment="Left" Margin="234,126,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
         <Label Content="." HorizontalAlignment="Left" Margin="142,127,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,127,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,127,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,126,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,126,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label x:Name="hostnumber_bin_oct1" Content="00000000" HorizontalAlignment="Left" Margin="325,126,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label x:Name="hostnumber_bin_oct2" Content="00000000" HorizontalAlignment="Left" Margin="391,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label x:Name="hostnumber_bin_oct3" Content="00000000" HorizontalAlignment="Left" Margin="458,126,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label x:Name="hostnumber_bin_oct4" Content="00000000" HorizontalAlignment="Left" Margin="523,127,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
         <Label Content="." HorizontalAlignment="Left" Margin="383,128,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="449,127,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="516,128,0,0" VerticalAlignment="Top"/>
-        <Label Content="Min host IPv4:" HorizontalAlignment="Left" Margin="11,153,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="108,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="150,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="192,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="234,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label Content="Broadcast:" HorizontalAlignment="Left" Margin="11,153,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="broadcast_dec_oct1" Content="0" HorizontalAlignment="Left" Margin="108,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="broadcast_dec_oct2" Content="0" HorizontalAlignment="Left" Margin="150,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="broadcast_dec_oct3" Content="0" HorizontalAlignment="Left" Margin="192,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center"/>
+        <Label x:Name="broadcast_dec_oct4" Content="0" HorizontalAlignment="Left" Margin="234,153,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
         <Label Content="." HorizontalAlignment="Left" Margin="142,154,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="184,154,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="226,154,0,0" VerticalAlignment="Top"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="325,153,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="391,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="458,153,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
-        <Label Content="00000000" HorizontalAlignment="Left" Margin="523,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
+        <Label x:Name="broadcast_bin_oct1" Content="00000000" HorizontalAlignment="Left" Margin="325,153,0,0" VerticalAlignment="Top" Width="64" HorizontalContentAlignment="Center"/>
+        <Label x:Name="broadcast_bin_oct2" Content="00000000" HorizontalAlignment="Left" Margin="391,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center"/>
+        <Label x:Name="broadcast_bin_oct3" Content="00000000" HorizontalAlignment="Left" Margin="458,153,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center"/>
+        <Label x:Name="broadcast_bin_oct4" Content="00000000" HorizontalAlignment="Left" Margin="523,154,0,0" VerticalAlignment="Top" Width="63" HorizontalContentAlignment="Center" RenderTransformOrigin="0.541,0.474"/>
         <Label Content="." HorizontalAlignment="Left" Margin="383,155,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="449,154,0,0" VerticalAlignment="Top"/>
         <Label Content="." HorizontalAlignment="Left" Margin="516,155,0,0" VerticalAlignment="Top"/>

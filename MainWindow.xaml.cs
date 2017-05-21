@@ -24,7 +24,6 @@ namespace NetCalculator
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         string[,] maskTypes =
@@ -73,6 +72,7 @@ namespace NetCalculator
 
         bool[] binToBoolArr (TextBox input1, TextBox input2, TextBox input3, TextBox input4)
         {
+            if ("" == input1.Text|| "" == input2.Text || "" == input3.Text || "" == input4.Text) return null;
             string temp = input1.Text + input2.Text + input3.Text + input4.Text;
             bool[] output = new bool[32];
             for(int i = 0; i<32; i++)
@@ -86,6 +86,7 @@ namespace NetCalculator
 
         string boolArrToBin (bool[] input)
         {
+            if (input == null) return null;
             string output = "";
             foreach (bool i in input)
             {
@@ -120,8 +121,24 @@ namespace NetCalculator
             return output;
         }
 
+        bool[] broadcastCounter(bool[] ip, bool[] mask)
+        {
+            if (ip == null||mask==null) return null;
+            bool[] output = new bool[32];
+            for(int i = 0; i<32; i++)
+            {
+                mask[i]=(mask[i] == true ? false : true);
+            }
+            for (int i = 0; i < 32; i++)
+            {
+                ip[i] = (mask[i] == true ? true:ip[i]);
+            }
+            return ip;
+        }
+
         bool[] netCounter(bool[] ip, bool[] mask)
         {
+            if (ip == null||mask==null) return null;
             bool[] output = new bool[32];
             for(int i = 0; i<32; i++)
             {
@@ -129,18 +146,33 @@ namespace NetCalculator
             }
             return output;
         }
+        bool[] hostNumberCounter(bool[] ip, bool[] mask)
+        {
+            if (ip == null || mask == null) return null;
+            for (int i = 0; i < 32; i++)
+            {
+                mask[i] = (mask[i] == true ? false : true);
+            }
+            for (int i = 0; i < 32; i++)
+            {
+                ip[i] = ip[i] & mask[i];
+            }
+            return ip;
+        }
 
         //Переводим из двоичной в десятичную
         string binToDec(string input)
         {
-            string output = "";
+            
             int temp = 0;
+            
             for(int i = 0; i<input.Length; i++)
             {
-                temp += int.Parse(input[i].ToString()) * (2 ^ i);
+                temp += int.Parse(input[i].ToString()) * (pow(2 ,(input.Length-i-1)));
+                
             }
             
-            return temp.ToString();
+            return (temp).ToString();
         }
 
         string decimalCut(string input)
@@ -171,6 +203,22 @@ namespace NetCalculator
                 return "";
             }
             return input;
+        }
+        /// <summary>
+        /// Функция возведения в степень для int переменных
+        /// </summary>
+        /// <param name="x">Что возводим</param>
+        /// <param name="a">Во что возводим</param>
+        /// <returns>Возвращает intовое значение</returns>
+        int pow(int x, int a)
+        {
+            int c = x;
+            if (a == 0) return 1;
+            for(int i=0; i<a-1; i++)
+            {
+                x *= c;
+            }
+            return x;
         }
 
         string binaryCut(string input)
@@ -218,6 +266,69 @@ namespace NetCalculator
             }
         }
 
+        void setHostNumber()
+        {
+            if (hostnumber_dec_oct1 != null & hostnumber_dec_oct2 != null & hostnumber_dec_oct3 != null & hostnumber_dec_oct4 != null & hostnumber_bin_oct1 != null & hostnumber_bin_oct2 != null & hostnumber_bin_oct3 != null & hostnumber_bin_oct4 != null)
+            {
+
+                bool[] temp = hostNumberCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
+                string nettempbin = boolArrToBin(temp);
+                hostnumber_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
+                hostnumber_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
+                hostnumber_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
+                hostnumber_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
+                hostnumber_dec_oct1.Content = binToDec(hostnumber_bin_oct1.Content.ToString()).ToString();
+                hostnumber_dec_oct2.Content = binToDec(hostnumber_bin_oct2.Content.ToString()).ToString();
+                hostnumber_dec_oct3.Content = binToDec(hostnumber_bin_oct3.Content.ToString()).ToString();
+                hostnumber_dec_oct4.Content = binToDec(hostnumber_bin_oct4.Content.ToString()).ToString();
+            }
+        }
+
+        void setNetAddress()
+        {
+            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            {
+
+                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
+                string nettempbin = boolArrToBin(temp);
+                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
+                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
+                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
+                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
+                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
+                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
+                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
+                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+            }
+        }
+
+        void setBroadcast()
+        {
+            if (broadcast_dec_oct1 != null & broadcast_dec_oct2 != null & broadcast_dec_oct3 != null & broadcast_dec_oct4 != null & broadcast_bin_oct1 != null & broadcast_bin_oct2 != null & broadcast_bin_oct3 != null & broadcast_bin_oct4 != null)
+            {
+
+                bool[] temp = broadcastCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
+                string nettempbin = boolArrToBin(temp);
+                broadcast_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
+                broadcast_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
+                broadcast_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
+                broadcast_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
+                broadcast_dec_oct1.Content = binToDec(broadcast_bin_oct1.Content.ToString()).ToString();
+                broadcast_dec_oct2.Content = binToDec(broadcast_bin_oct2.Content.ToString()).ToString();
+                broadcast_dec_oct3.Content = binToDec(broadcast_bin_oct3.Content.ToString()).ToString();
+                broadcast_dec_oct4.Content = binToDec(broadcast_bin_oct4.Content.ToString()).ToString();
+            }
+        }
+
+
+        void setAll()
+        {
+            setNetAddress();
+            setBroadcast();
+            setHostNumber();
+        }
+
+
 
 
         //Секция десятичного вида IP адреса
@@ -240,21 +351,12 @@ namespace NetCalculator
             {
                 ipv4_bin_1oct.Text = decToBin(ipv4_dec_1oct.Text);
             }
-            if(netaddress_dec_oct1!=null& netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
-
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content =nettempbin[0].ToString()+ nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content =nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content =nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+                setAll();
             }
-            
+            catch { }
+
         }
 
         private void ipv4_dec_2oct_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -275,20 +377,11 @@ namespace NetCalculator
             {
                 ipv4_bin_2oct.Text = decToBin(ipv4_dec_2oct.Text);
             }
-            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
-
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+                setAll();
             }
+            catch { }
         }
         private void ipv4_dec_3oct_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
@@ -308,20 +401,11 @@ namespace NetCalculator
             {
                 ipv4_bin_3oct.Text = decToBin(ipv4_dec_3oct.Text);
             }
-            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
-
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+                setAll();
             }
+            catch { }
         }
         private void ipv4_dec_4oct_GotMouseCapture(object sender, MouseEventArgs e)
         {
@@ -345,20 +429,11 @@ namespace NetCalculator
             {
                 ipv4_bin_4oct.Text = decToBin(ipv4_dec_4oct.Text);
             }
-            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
-
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+                setAll();
             }
+            catch { }
         }
 
 
@@ -381,20 +456,12 @@ namespace NetCalculator
             {
                 mask_bin_1oct.Text = decToBin(mask_dec_1oct.Text);
             }
-            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
 
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+                setAll();
             }
+            catch { }
         }
 
         private void mask_dec_2oct_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -415,20 +482,11 @@ namespace NetCalculator
             {
                 mask_bin_2oct.Text = decToBin(mask_dec_2oct.Text);
             }
-            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
-
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+                setAll();
             }
+            catch { }
         }
         private void mask_dec_3oct_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
@@ -448,20 +506,11 @@ namespace NetCalculator
             {
                 mask_bin_3oct.Text = decToBin(mask_dec_3oct.Text);
             }
-            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
-
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+                setAll();
             }
+            catch { }
         }
         private void mask_dec_4oct_GotMouseCapture(object sender, MouseEventArgs e)
         {
@@ -485,20 +534,11 @@ namespace NetCalculator
             {
                 mask_bin_4oct.Text = decToBin(mask_dec_4oct.Text);
             }
-            if (netaddress_dec_oct1 != null & netaddress_dec_oct2 != null & netaddress_dec_oct3 != null & netaddress_dec_oct4 != null & netaddress_bin_oct1 != null & netaddress_bin_oct2 != null & netaddress_bin_oct3 != null & netaddress_bin_oct4 != null)
+            try
             {
-
-                bool[] temp = netCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
-                string nettempbin = boolArrToBin(temp);
-                netaddress_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
-                netaddress_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
-                netaddress_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
-                netaddress_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
-                netaddress_dec_oct1.Content = binToDec(netaddress_bin_oct1.Content.ToString()).ToString();
-                netaddress_dec_oct2.Content = binToDec(netaddress_bin_oct2.Content.ToString()).ToString();
-                netaddress_dec_oct3.Content = binToDec(netaddress_bin_oct3.Content.ToString()).ToString();
-                netaddress_dec_oct4.Content = binToDec(netaddress_bin_oct4.Content.ToString()).ToString();
+               setAll();
             }
+            catch { }
         }
 
         private void mask_dec_slash_TextChanged(object sender, TextChangedEventArgs e)
