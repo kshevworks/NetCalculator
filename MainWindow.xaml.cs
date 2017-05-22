@@ -19,11 +19,12 @@ namespace NetCalculator
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    { 
-        
+    {
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         string[,] maskTypes =
@@ -160,6 +161,46 @@ namespace NetCalculator
             return ip;
         }
 
+        string hostsInSubnetCouner(TextBox input)
+        {
+            int temp = pow(2, 32 - int.Parse(input.Text)) - 2;
+            return temp.ToString();
+        }
+
+        string firstUsableAddressCounter(bool[] ip, bool[] mask)
+        {
+            bool[] net = netCounter(ip, mask);
+            string output = boolArrToBin(net);
+            output = Convert.ToString(Convert.ToUInt32(output, 2) + 1, 2);
+            int l = output.Length;
+            if (l < 32)
+            {
+                for (int i = 0; i < 32 - l; i++)
+                {
+                    output = "0" + output;
+                }
+            }
+                    return output;
+
+        }
+        string lastUsableAddressCount(bool[] ip, bool[] mask)
+        {
+            bool[] net = broadcastCounter(ip, mask);
+            string output = boolArrToBin(net);
+            output = Convert.ToString(Convert.ToUInt32(output, 2) - 1, 2);
+            int l = output.Length;
+            if (l < 32)
+            {
+                for(int i = 0; i<32- l; i++)
+                {
+                    output = "0" + output;
+                }
+            }
+            
+            return output;
+
+        }
+
         //Переводим из двоичной в десятичную
         string binToDec(string input)
         {
@@ -266,6 +307,11 @@ namespace NetCalculator
             }
         }
 
+        void setHostSubnetCounter()
+        {
+            if (hosts_counter != null && mask_dec_slash !=null) hosts_counter.Content = hostsInSubnetCouner(mask_dec_slash);
+        }
+
         void setHostNumber()
         {
             if (hostnumber_dec_oct1 != null & hostnumber_dec_oct2 != null & hostnumber_dec_oct3 != null & hostnumber_dec_oct4 != null & hostnumber_bin_oct1 != null & hostnumber_bin_oct2 != null & hostnumber_bin_oct3 != null & hostnumber_bin_oct4 != null)
@@ -304,7 +350,7 @@ namespace NetCalculator
 
         void setBroadcast()
         {
-            if (broadcast_dec_oct1 != null & broadcast_dec_oct2 != null & broadcast_dec_oct3 != null & broadcast_dec_oct4 != null & broadcast_bin_oct1 != null & broadcast_bin_oct2 != null & broadcast_bin_oct3 != null & broadcast_bin_oct4 != null)
+            if ( broadcast_dec_oct1 != null & broadcast_dec_oct2 != null & broadcast_dec_oct3 != null & broadcast_dec_oct4 != null & broadcast_bin_oct1 != null & broadcast_bin_oct2 != null & broadcast_bin_oct3 != null & broadcast_bin_oct4 != null)
             {
 
                 bool[] temp = broadcastCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
@@ -320,12 +366,77 @@ namespace NetCalculator
             }
         }
 
+        void setFirstHost()
+        {
+            if (minpool != null & firsthost_dec_oct1 != null & firsthost_dec_oct2 != null & firsthost_dec_oct3 != null & firsthost_dec_oct4 != null & firsthost_bin_oct1 != null & firsthost_bin_oct2 != null & firsthost_bin_oct3 != null & firsthost_bin_oct4 != null)
+            {
+
+                string nettempbin = firstUsableAddressCounter(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
+                
+                firsthost_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
+                firsthost_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
+                firsthost_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
+                firsthost_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
+                firsthost_dec_oct1.Content = binToDec(firsthost_bin_oct1.Content.ToString()).ToString();
+                firsthost_dec_oct2.Content = binToDec(firsthost_bin_oct2.Content.ToString()).ToString();
+                firsthost_dec_oct3.Content = binToDec(firsthost_bin_oct3.Content.ToString()).ToString();
+                firsthost_dec_oct4.Content = binToDec(firsthost_bin_oct4.Content.ToString()).ToString();
+                minpool.Content = firsthost_dec_oct1.Content.ToString()+"." + firsthost_dec_oct2.Content.ToString() + "." + firsthost_dec_oct3.Content.ToString() + "." + firsthost_dec_oct4.Content.ToString();
+            }
+        }
+        void setLastHost()
+        {
+            if (maxpool != null & lasthost_dec_oct1 != null & lasthost_dec_oct2 != null & lasthost_dec_oct3 != null & lasthost_dec_oct4 != null & lasthost_bin_oct1 != null & lasthost_bin_oct2 != null & lasthost_bin_oct3 != null & lasthost_bin_oct4 != null)
+            {
+
+                string nettempbin = lastUsableAddressCount(binToBoolArr(ipv4_bin_1oct, ipv4_bin_2oct, ipv4_bin_3oct, ipv4_bin_4oct), (binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct)));
+
+                lasthost_bin_oct1.Content = nettempbin[0].ToString() + nettempbin[1].ToString() + nettempbin[2].ToString() + nettempbin[3].ToString() + nettempbin[4].ToString() + nettempbin[5].ToString() + nettempbin[6].ToString() + nettempbin[7].ToString();
+                lasthost_bin_oct2.Content = nettempbin[8].ToString() + nettempbin[9].ToString() + nettempbin[10].ToString() + nettempbin[11].ToString() + nettempbin[12].ToString() + nettempbin[13].ToString() + nettempbin[14].ToString() + nettempbin[15].ToString();
+                lasthost_bin_oct3.Content = nettempbin[16].ToString() + nettempbin[17].ToString() + nettempbin[18].ToString() + nettempbin[19].ToString() + nettempbin[20].ToString() + nettempbin[21].ToString() + nettempbin[22].ToString() + nettempbin[23].ToString();
+                lasthost_bin_oct4.Content = nettempbin[24].ToString() + nettempbin[25].ToString() + nettempbin[26].ToString() + nettempbin[27].ToString() + nettempbin[28].ToString() + nettempbin[29].ToString() + nettempbin[30].ToString() + nettempbin[31].ToString();
+                lasthost_dec_oct1.Content = binToDec(lasthost_bin_oct1.Content.ToString()).ToString();
+                lasthost_dec_oct2.Content = binToDec(lasthost_bin_oct2.Content.ToString()).ToString();
+                lasthost_dec_oct3.Content = binToDec(lasthost_bin_oct3.Content.ToString()).ToString();
+                lasthost_dec_oct4.Content = binToDec(lasthost_bin_oct4.Content.ToString()).ToString();
+                maxpool.Content = lasthost_dec_oct1.Content.ToString() + "." + lasthost_dec_oct2.Content.ToString() + "." + lasthost_dec_oct3.Content.ToString() + "." + lasthost_dec_oct4.Content.ToString();
+            }
+        }
+
+        void setMaskError()
+        {
+            if (errorLbl != null)
+            {
+                bool flag = false;
+                bool[] mask = binToBoolArr(mask_bin_1oct, mask_bin_2oct, mask_bin_3oct, mask_bin_4oct);
+                foreach (bool a in mask)
+                {
+                    if (!a)
+                    {
+                        if (!flag) flag = true;
+                        
+                    }
+                    else if (flag & a)
+                    {
+                        errorLbl.Content = "Error in subnet mask";
+                        errorLbl.Visibility = Visibility.Visible;
+                        break;
+                    }
+                    else errorLbl.Visibility = Visibility.Hidden;
+                }
+            }
+        }
 
         void setAll()
         {
             setNetAddress();
             setBroadcast();
             setHostNumber();
+            setHostSubnetCounter();
+            setFirstHost();
+            setLastHost();
+            setMaskError();
+
         }
 
 
