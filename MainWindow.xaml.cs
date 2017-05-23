@@ -163,7 +163,7 @@ namespace NetCalculator
 
         string hostsInSubnetCouner(TextBox input)
         {
-            int temp = pow(2, 32 - int.Parse(input.Text)) - 2;
+            ulong temp = Convert.ToUInt64(pow(2, 32 - int.Parse(input.Text))) - 2;
             return temp.ToString();
         }
 

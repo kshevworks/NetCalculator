@@ -120,7 +120,7 @@
         <Label x:Name="maxpool" Content="0.0.0.0" HorizontalAlignment="Left" Margin="254,271,0,0" VerticalAlignment="Top" Width="127"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="244,271,0,0" VerticalAlignment="Top"/>
         <Label Content="Hosts in subnet:" HorizontalAlignment="Left" Margin="11,240,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="hosts_counter" Content="0" HorizontalAlignment="Left" Margin="99,240,0,0" VerticalAlignment="Top" Width="79" HorizontalContentAlignment="Center"/>
+        <Label x:Name="hosts_counter" Content="0" HorizontalAlignment="Left" Margin="119,240,0,0" VerticalAlignment="Top" Width="211"/>
         <Label Content="/" HorizontalAlignment="Left" Margin="272,29,0,0" VerticalAlignment="Top"/>
         <Label x:Name="errorLbl" Content="Errorring" HorizontalAlignment="Left" Margin="12,302,0,0" VerticalAlignment="Top" Width="572" Foreground="Red" Visibility="Hidden"/>
 
