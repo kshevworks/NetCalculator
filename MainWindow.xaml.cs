@@ -897,5 +897,11 @@ namespace NetCalculator
         {
             setMask(mask_dec_4oct);
         }
+
+        private void eduCB_Checked(object sender, RoutedEventArgs e)
+        {
+            eduCB.IsChecked = false;
+            MessageBox.Show("Work in progress.");
+        }
     }
 }
