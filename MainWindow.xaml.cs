@@ -897,11 +897,58 @@ namespace NetCalculator
         {
             setMask(mask_dec_4oct);
         }
-
+        //Обработка режима "с лампочками"
         private void eduCB_Checked(object sender, RoutedEventArgs e)
         {
-            eduCB.IsChecked = false;
+            
             MessageBox.Show("Work in progress.");
+            showLights();
+            
         }
+        private void eduCB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Work in progress.");
+            hideLights();
+        }
+
+        void showLights()
+        {
+            this.Width += 795;            
+        }
+
+        void hideLights()
+        {
+            this.Width -= 795;
+            
+        }
+
+        private void circle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
+            var bmp0 = new BitmapImage();
+            bmp0.BeginInit();
+            bmp0.UriSource = new Uri("pack://application:,,,/NetCalculator;component/Resources/c0.png");
+            bmp0.EndInit();
+            var bmp1 = new BitmapImage();
+            bmp1.BeginInit();
+            bmp1.UriSource = new Uri("pack://application:,,,/NetCalculator;component/Resources/c1.png");
+            bmp1.EndInit();
+            Console.WriteLine(((Image)sender).Source.ToString());
+            Console.WriteLine(bmp0.ToString());
+            if (((Image)sender).Source.ToString() == bmp0.ToString())
+            {
+                
+                ((Image)sender).Source = bmp1;
+            }
+            else
+            {
+                ((Image)sender).Source = bmp0;
+            }
+            
+           
+            
+        }
+
+        
     }
 }

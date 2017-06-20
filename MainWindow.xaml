@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetCalculator"
         mc:Ignorable="d"
-        Title="IP.net Calculator" Height="491.666" Width="604.038" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,4,0">
+        Title="IP.net Calculator" Height="490" Width="607" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="MainGrid" Margin="0,0,4,0">
         <Label Content="Net mask:" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top"/>
         <Label Content="Host address:" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top"/>
         <Label Content="Decimal" HorizontalAlignment="Left" Margin="164,133,0,0" VerticalAlignment="Top"/>
@@ -124,9 +124,233 @@
         <Label Content="/" HorizontalAlignment="Left" Margin="272,159,0,0" VerticalAlignment="Top"/>
         <Label x:Name="errorLbl" Content="Errorring" HorizontalAlignment="Left" Margin="12,432,0,0" VerticalAlignment="Top" Width="572" Foreground="Red" Visibility="Hidden"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Resources/pravilnaya_emblema_mgu_1.jpg"/>
-        <Label Content="Network calculator by" HorizontalAlignment="Center" Margin="122,10,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontFamily="Stencil" Width="462" FontSize="36"/>
+        <Label Content="Network calculator by" HorizontalAlignment="Left" Margin="122,0,0,398" HorizontalContentAlignment="Center" FontFamily="Stencil" Width="462" FontSize="36" Height="53" VerticalAlignment="Bottom"/>
         <Label Content="Maritime State University" HorizontalAlignment="Left" Margin="122,57,10,0" VerticalAlignment="Top" FontFamily="Stencil" Width="462" FontSize="24"/>
-        <CheckBox x:Name="eduCB" Content="Education mode" HorizontalAlignment="Left" Margin="413,407,0,0" VerticalAlignment="Top" Checked="eduCB_Checked"/>
+        <CheckBox x:Name="eduCB" Content="Education mode" HorizontalAlignment="Left" Margin="413,407,0,0" VerticalAlignment="Top" Checked="eduCB_Checked" Unchecked="eduCB_Unchecked"/>
+        <Image x:Name="ipc1" HorizontalAlignment="Left" Height="22" Margin="604,162,-29,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseLeftButtonDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc2" HorizontalAlignment="Left" Height="22" Margin="628,162,-53,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc3" HorizontalAlignment="Left" Height="22" Margin="652,162,-77,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc4" HorizontalAlignment="Left" Height="22" Margin="676,162,-101,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc5" HorizontalAlignment="Left" Height="22" Margin="699,162,-124,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc6" HorizontalAlignment="Left" Height="22" Margin="723,162,-148,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc7" HorizontalAlignment="Left" Height="22" Margin="747,162,-172,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc8" HorizontalAlignment="Left" Height="22" Margin="771,162,-196,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc9" HorizontalAlignment="Left" Height="22" Margin="795,162,-220,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc10" HorizontalAlignment="Left" Height="22" Margin="819,162,-244,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc11" HorizontalAlignment="Left" Height="22" Margin="843,162,-268,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc12" HorizontalAlignment="Left" Height="22" Margin="867,162,-292,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc13" HorizontalAlignment="Left" Height="22" Margin="890,162,-315,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc14" HorizontalAlignment="Left" Height="22" Margin="914,162,-339,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc15" HorizontalAlignment="Left" Height="22" Margin="938,162,-363,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc16" HorizontalAlignment="Left" Height="22" Margin="962,162,-387,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc17" HorizontalAlignment="Left" Height="22" Margin="986,162,-411,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc18" HorizontalAlignment="Left" Height="22" Margin="1010,162,-435,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc19" HorizontalAlignment="Left" Height="22" Margin="1034,162,-459,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc20" HorizontalAlignment="Left" Height="22" Margin="1058,162,-483,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc21" HorizontalAlignment="Left" Height="22" Margin="1081,162,-506,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc22" HorizontalAlignment="Left" Height="22" Margin="1105,162,-530,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc23" HorizontalAlignment="Left" Height="22" Margin="1129,162,-554,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc24" HorizontalAlignment="Left" Height="22" Margin="1153,162,-578,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc25" HorizontalAlignment="Left" Height="22" Margin="1177,162,-602,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc26" HorizontalAlignment="Left" Height="22" Margin="1201,162,-626,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc27" HorizontalAlignment="Left" Height="22" Margin="1225,162,-650,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc28" HorizontalAlignment="Left" Height="22" Margin="1249,162,-674,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc29" HorizontalAlignment="Left" Height="22" Margin="1272,162,-697,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc30" HorizontalAlignment="Left" Height="22" Margin="1296,162,-721,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc31" HorizontalAlignment="Left" Height="22" Margin="1320,162,-745,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="ipc32" HorizontalAlignment="Left" Height="22" Margin="1344,162,-769,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png" MouseDown="circle_MouseLeftButtonDown"/>
+        <Image x:Name="maskc1" HorizontalAlignment="Left" Height="22" Margin="604,187,-29,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc2" HorizontalAlignment="Left" Height="22" Margin="628,187,-53,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc3" HorizontalAlignment="Left" Height="22" Margin="652,187,-77,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc4" HorizontalAlignment="Left" Height="22" Margin="676,187,-101,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc5" HorizontalAlignment="Left" Height="22" Margin="699,187,-124,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc6" HorizontalAlignment="Left" Height="22" Margin="723,187,-148,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc7" HorizontalAlignment="Left" Height="22" Margin="747,187,-172,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc8" HorizontalAlignment="Left" Height="22" Margin="771,187,-196,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc9" HorizontalAlignment="Left" Height="22" Margin="795,187,-220,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc10" HorizontalAlignment="Left" Height="22" Margin="819,187,-244,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc11" HorizontalAlignment="Left" Height="22" Margin="843,187,-268,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc12" HorizontalAlignment="Left" Height="22" Margin="867,187,-292,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc13" HorizontalAlignment="Left" Height="22" Margin="890,187,-315,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc14" HorizontalAlignment="Left" Height="22" Margin="914,187,-339,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc15" HorizontalAlignment="Left" Height="22" Margin="938,187,-363,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc16" HorizontalAlignment="Left" Height="22" Margin="962,187,-387,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc17" HorizontalAlignment="Left" Height="22" Margin="986,187,-411,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc18" HorizontalAlignment="Left" Height="22" Margin="1010,187,-435,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc19" HorizontalAlignment="Left" Height="22" Margin="1034,187,-459,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc20" HorizontalAlignment="Left" Height="22" Margin="1058,187,-483,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc21" HorizontalAlignment="Left" Height="22" Margin="1081,187,-506,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc22" HorizontalAlignment="Left" Height="22" Margin="1105,187,-530,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc23" HorizontalAlignment="Left" Height="22" Margin="1129,187,-554,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc24" HorizontalAlignment="Left" Height="22" Margin="1153,187,-578,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc25" HorizontalAlignment="Left" Height="22" Margin="1177,187,-602,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc26" HorizontalAlignment="Left" Height="22" Margin="1201,187,-626,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc27" HorizontalAlignment="Left" Height="22" Margin="1225,187,-650,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc28" HorizontalAlignment="Left" Height="22" Margin="1249,187,-674,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc29" HorizontalAlignment="Left" Height="22" Margin="1272,187,-697,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc30" HorizontalAlignment="Left" Height="22" Margin="1296,187,-721,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc31" HorizontalAlignment="Left" Height="22" Margin="1320,187,-745,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maskc32" HorizontalAlignment="Left" Height="22" Margin="1344,187,-769,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc1" HorizontalAlignment="Left" Height="22" Margin="604,233,-29,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc2" HorizontalAlignment="Left" Height="22" Margin="628,233,-53,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc3" HorizontalAlignment="Left" Height="22" Margin="652,233,-77,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc4" HorizontalAlignment="Left" Height="22" Margin="676,233,-101,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc5" HorizontalAlignment="Left" Height="22" Margin="699,233,-124,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc6" HorizontalAlignment="Left" Height="22" Margin="723,233,-148,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc7" HorizontalAlignment="Left" Height="22" Margin="747,233,-172,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc8" HorizontalAlignment="Left" Height="22" Margin="771,233,-196,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc9_Copy" HorizontalAlignment="Left" Height="22" Margin="795,233,-220,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc10" HorizontalAlignment="Left" Height="22" Margin="819,233,-244,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc11" HorizontalAlignment="Left" Height="22" Margin="843,233,-268,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc12" HorizontalAlignment="Left" Height="22" Margin="867,233,-292,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc13" HorizontalAlignment="Left" Height="22" Margin="890,233,-315,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc14" HorizontalAlignment="Left" Height="22" Margin="914,233,-339,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc15" HorizontalAlignment="Left" Height="22" Margin="938,233,-363,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc16" HorizontalAlignment="Left" Height="22" Margin="962,233,-387,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc17" HorizontalAlignment="Left" Height="22" Margin="986,233,-411,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc18" HorizontalAlignment="Left" Height="22" Margin="1010,233,-435,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc19" HorizontalAlignment="Left" Height="22" Margin="1034,233,-459,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc20" HorizontalAlignment="Left" Height="22" Margin="1058,233,-483,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc21" HorizontalAlignment="Left" Height="22" Margin="1081,233,-506,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc22" HorizontalAlignment="Left" Height="22" Margin="1105,233,-530,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc23" HorizontalAlignment="Left" Height="22" Margin="1129,233,-554,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc24" HorizontalAlignment="Left" Height="22" Margin="1153,233,-578,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc25" HorizontalAlignment="Left" Height="22" Margin="1177,233,-602,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc26" HorizontalAlignment="Left" Height="22" Margin="1201,233,-626,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc27" HorizontalAlignment="Left" Height="22" Margin="1225,233,-650,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc28" HorizontalAlignment="Left" Height="22" Margin="1249,233,-674,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc29" HorizontalAlignment="Left" Height="22" Margin="1272,233,-697,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc30" HorizontalAlignment="Left" Height="22" Margin="1296,233,-721,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc31" HorizontalAlignment="Left" Height="22" Margin="1320,233,-745,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="netc32" HorizontalAlignment="Left" Height="22" Margin="1344,233,-769,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc1" HorizontalAlignment="Left" Height="22" Margin="604,258,-29,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc2" HorizontalAlignment="Left" Height="22" Margin="628,258,-53,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc3" HorizontalAlignment="Left" Height="22" Margin="652,258,-77,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc4" HorizontalAlignment="Left" Height="22" Margin="676,258,-101,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc5" HorizontalAlignment="Left" Height="22" Margin="699,258,-124,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc6" HorizontalAlignment="Left" Height="22" Margin="723,258,-148,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc7" HorizontalAlignment="Left" Height="22" Margin="747,258,-172,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc8" HorizontalAlignment="Left" Height="22" Margin="771,258,-196,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc9" HorizontalAlignment="Left" Height="22" Margin="795,258,-220,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc10" HorizontalAlignment="Left" Height="22" Margin="819,258,-244,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc11" HorizontalAlignment="Left" Height="22" Margin="843,258,-268,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc12" HorizontalAlignment="Left" Height="22" Margin="867,258,-292,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc13" HorizontalAlignment="Left" Height="22" Margin="890,258,-315,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc14" HorizontalAlignment="Left" Height="22" Margin="914,258,-339,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc15" HorizontalAlignment="Left" Height="22" Margin="938,258,-363,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc16" HorizontalAlignment="Left" Height="22" Margin="962,258,-387,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc17" HorizontalAlignment="Left" Height="22" Margin="986,258,-411,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc18" HorizontalAlignment="Left" Height="22" Margin="1010,258,-435,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc19" HorizontalAlignment="Left" Height="22" Margin="1034,258,-459,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc20" HorizontalAlignment="Left" Height="22" Margin="1058,258,-483,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc21" HorizontalAlignment="Left" Height="22" Margin="1081,258,-506,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc22" HorizontalAlignment="Left" Height="22" Margin="1105,258,-530,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc23" HorizontalAlignment="Left" Height="22" Margin="1129,258,-554,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc24" HorizontalAlignment="Left" Height="22" Margin="1153,258,-578,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc25" HorizontalAlignment="Left" Height="22" Margin="1177,258,-602,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc26" HorizontalAlignment="Left" Height="22" Margin="1201,258,-626,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc27" HorizontalAlignment="Left" Height="22" Margin="1225,258,-650,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc28" HorizontalAlignment="Left" Height="22" Margin="1249,258,-674,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc29" HorizontalAlignment="Left" Height="22" Margin="1272,258,-697,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc30" HorizontalAlignment="Left" Height="22" Margin="1296,258,-721,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc31" HorizontalAlignment="Left" Height="22" Margin="1320,258,-745,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="hostc32" HorizontalAlignment="Left" Height="22" Margin="1344,258,-769,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc1" HorizontalAlignment="Left" Height="22" Margin="604,287,-29,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc2" HorizontalAlignment="Left" Height="22" Margin="628,287,-53,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc3" HorizontalAlignment="Left" Height="22" Margin="652,287,-77,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc4" HorizontalAlignment="Left" Height="22" Margin="676,287,-101,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc5" HorizontalAlignment="Left" Height="22" Margin="699,287,-124,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc6" HorizontalAlignment="Left" Height="22" Margin="723,287,-148,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc7" HorizontalAlignment="Left" Height="22" Margin="747,287,-172,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc8" HorizontalAlignment="Left" Height="22" Margin="771,287,-196,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc9" HorizontalAlignment="Left" Height="22" Margin="795,287,-220,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc10" HorizontalAlignment="Left" Height="22" Margin="819,287,-244,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc11" HorizontalAlignment="Left" Height="22" Margin="843,287,-268,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc12" HorizontalAlignment="Left" Height="22" Margin="867,287,-292,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc13" HorizontalAlignment="Left" Height="22" Margin="890,287,-315,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc14" HorizontalAlignment="Left" Height="22" Margin="914,287,-339,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc15" HorizontalAlignment="Left" Height="22" Margin="938,287,-363,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc16" HorizontalAlignment="Left" Height="22" Margin="962,287,-387,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc17" HorizontalAlignment="Left" Height="22" Margin="986,287,-411,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc18" HorizontalAlignment="Left" Height="22" Margin="1010,287,-435,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc19" HorizontalAlignment="Left" Height="22" Margin="1034,287,-459,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc20" HorizontalAlignment="Left" Height="22" Margin="1058,287,-483,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc21" HorizontalAlignment="Left" Height="22" Margin="1081,287,-506,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc22" HorizontalAlignment="Left" Height="22" Margin="1105,287,-530,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc23" HorizontalAlignment="Left" Height="22" Margin="1129,287,-554,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc24" HorizontalAlignment="Left" Height="22" Margin="1153,287,-578,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc25" HorizontalAlignment="Left" Height="22" Margin="1177,287,-602,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc26" HorizontalAlignment="Left" Height="22" Margin="1201,287,-626,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc27" HorizontalAlignment="Left" Height="22" Margin="1225,287,-650,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc28" HorizontalAlignment="Left" Height="22" Margin="1249,287,-674,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc29" HorizontalAlignment="Left" Height="22" Margin="1272,287,-697,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc30" HorizontalAlignment="Left" Height="22" Margin="1296,287,-721,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc31" HorizontalAlignment="Left" Height="22" Margin="1320,287,-745,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="broadc32" HorizontalAlignment="Left" Height="22" Margin="1344,287,-769,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc1" HorizontalAlignment="Left" Height="22" Margin="604,314,-29,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc2" HorizontalAlignment="Left" Height="22" Margin="628,314,-53,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc3" HorizontalAlignment="Left" Height="22" Margin="652,314,-77,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc4" HorizontalAlignment="Left" Height="22" Margin="676,314,-101,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc5" HorizontalAlignment="Left" Height="22" Margin="699,314,-124,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc6" HorizontalAlignment="Left" Height="22" Margin="723,314,-148,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc7" HorizontalAlignment="Left" Height="22" Margin="747,314,-172,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc8" HorizontalAlignment="Left" Height="22" Margin="771,314,-196,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc9" HorizontalAlignment="Left" Height="22" Margin="795,314,-220,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc10" HorizontalAlignment="Left" Height="22" Margin="819,314,-244,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc11" HorizontalAlignment="Left" Height="22" Margin="843,314,-268,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc12" HorizontalAlignment="Left" Height="22" Margin="867,314,-292,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc13" HorizontalAlignment="Left" Height="22" Margin="890,314,-315,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc14" HorizontalAlignment="Left" Height="22" Margin="914,314,-339,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc15" HorizontalAlignment="Left" Height="22" Margin="938,314,-363,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc16" HorizontalAlignment="Left" Height="22" Margin="962,314,-387,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc17" HorizontalAlignment="Left" Height="22" Margin="986,314,-411,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc18" HorizontalAlignment="Left" Height="22" Margin="1010,314,-435,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc19" HorizontalAlignment="Left" Height="22" Margin="1034,314,-459,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc20" HorizontalAlignment="Left" Height="22" Margin="1058,314,-483,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc21" HorizontalAlignment="Left" Height="22" Margin="1081,314,-506,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc22" HorizontalAlignment="Left" Height="22" Margin="1105,314,-530,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc23" HorizontalAlignment="Left" Height="22" Margin="1129,314,-554,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc24" HorizontalAlignment="Left" Height="22" Margin="1153,314,-578,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc25" HorizontalAlignment="Left" Height="22" Margin="1177,314,-602,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc26" HorizontalAlignment="Left" Height="22" Margin="1201,314,-626,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc27" HorizontalAlignment="Left" Height="22" Margin="1225,314,-650,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc28" HorizontalAlignment="Left" Height="22" Margin="1249,314,-674,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc29" HorizontalAlignment="Left" Height="22" Margin="1272,314,-697,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc30" HorizontalAlignment="Left" Height="22" Margin="1296,314,-721,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc31" HorizontalAlignment="Left" Height="22" Margin="1320,314,-745,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="minc32" HorizontalAlignment="Left" Height="22" Margin="1344,314,-769,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc1" HorizontalAlignment="Left" Height="22" Margin="604,339,-29,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc2" HorizontalAlignment="Left" Height="22" Margin="628,339,-53,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc3" HorizontalAlignment="Left" Height="22" Margin="652,339,-77,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc4" HorizontalAlignment="Left" Height="22" Margin="676,339,-101,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc5" HorizontalAlignment="Left" Height="22" Margin="699,339,-124,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc6" HorizontalAlignment="Left" Height="22" Margin="723,339,-148,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc7" HorizontalAlignment="Left" Height="22" Margin="747,339,-172,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc8" HorizontalAlignment="Left" Height="22" Margin="771,339,-196,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc9" HorizontalAlignment="Left" Height="22" Margin="795,339,-220,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc10" HorizontalAlignment="Left" Height="22" Margin="819,339,-244,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc11" HorizontalAlignment="Left" Height="22" Margin="843,339,-268,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc12" HorizontalAlignment="Left" Height="22" Margin="867,339,-292,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc13" HorizontalAlignment="Left" Height="22" Margin="890,339,-315,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc14" HorizontalAlignment="Left" Height="22" Margin="914,339,-339,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc15" HorizontalAlignment="Left" Height="22" Margin="938,339,-363,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc16" HorizontalAlignment="Left" Height="22" Margin="962,339,-387,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc17" HorizontalAlignment="Left" Height="22" Margin="986,339,-411,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc18" HorizontalAlignment="Left" Height="22" Margin="1010,339,-435,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc19" HorizontalAlignment="Left" Height="22" Margin="1034,339,-459,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc20" HorizontalAlignment="Left" Height="22" Margin="1058,339,-483,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc21" HorizontalAlignment="Left" Height="22" Margin="1081,339,-506,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc22" HorizontalAlignment="Left" Height="22" Margin="1105,339,-530,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc23" HorizontalAlignment="Left" Height="22" Margin="1129,339,-554,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc24" HorizontalAlignment="Left" Height="22" Margin="1153,339,-578,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc25" HorizontalAlignment="Left" Height="22" Margin="1177,339,-602,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc26" HorizontalAlignment="Left" Height="22" Margin="1201,339,-626,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc27" HorizontalAlignment="Left" Height="22" Margin="1225,339,-650,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc28" HorizontalAlignment="Left" Height="22" Margin="1249,339,-674,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc29" HorizontalAlignment="Left" Height="22" Margin="1272,339,-697,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc30" HorizontalAlignment="Left" Height="22" Margin="1296,339,-721,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc31" HorizontalAlignment="Left" Height="22" Margin="1320,339,-745,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
+        <Image x:Name="maxc32" HorizontalAlignment="Left" Height="22" Margin="1344,339,-769,0" VerticalAlignment="Top" Width="22" Source="Resources/c0.png"/>
 
 
     </Grid>
